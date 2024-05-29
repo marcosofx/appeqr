@@ -3,15 +3,9 @@
     "name": "appeqr",
     "slug": "appeqr",
     "version": "1.0.0",
-
     "web": {
       "favicon": "./assets/favicon.png"
     },
-
-    "experiments": {
-      "tsconfigPaths": true
-    },
-
     "plugins": [
       [
         "expo-dev-launcher",
@@ -20,25 +14,39 @@
         }
       ]
     ],
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryAddUsageDescription": "App needs access to save photos",
+        "NSPhotoLibraryUsageDescription": "App needs access to your photo library"
+      },
+      "bundleIdentifier": "com.marcosofx.appeqr"
     },
     "android": {
+      "permissions": [
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.marcosofx.appeqr"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5d8b19d6-21dc-43ef-ae2f-acc030870d96"
       }
     }
   }
